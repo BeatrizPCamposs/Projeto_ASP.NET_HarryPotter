@@ -1,0 +1,143 @@
+﻿@model ds_mvc_asp.Models.Usuario
+
+@{
+    ViewBag.Title = "Resultado";
+}
+<style>
+    dt {
+        color: #E8BF55;
+        padding: 5px;
+    }
+
+    dd {
+        padding: 5px;
+        color: #fff;
+    }
+
+    #voltar {
+        margin: 0 auto;
+        width: 90px;
+        height: 25px;
+        color: #fff;
+        background: transparent #E8BF55;
+        border-color: #E8BF55;
+        border: 2px solid;
+        display: flex;
+        border-radius: 10px;
+        margin-left: 0px;
+    }
+
+        #voltar a {
+            color: #fff;
+            font-family: 'Edo SZ';
+            border-radius: 10px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            text-align: center;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+
+    .centro h2 {
+        text-shadow: 3px 3px #6B481D;
+        color: #E8BF55;
+        margin-left: 140px;
+        font-family: 'Edo SZ';
+    }
+
+    .containerr {
+        width: 500px;
+        height: 250px;
+        background: transparent;
+        border: 3px solid #fff;
+        border-radius: 20px;
+    }
+
+    .dl-horizontal {
+        margin-top: 30px;
+    }
+
+    .image1 img {
+        height: 400px;
+        width: 400px;
+        top: 0px;
+        z-index: 3;
+        position: absolute;
+        margin-top: 110px;
+        margin-left: 670px;
+    }
+
+
+    .linha {
+        margin-left: -180px;
+    }
+</style>
+
+<div class="centro"><h2>Dados Cadastrados</h2></div>
+<br />
+<div>
+
+    <div class="containerr">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.NomeUsuario)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NomeUsuario)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Nasc)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nasc)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Senha)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Senha)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Confsenha)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Confsenha)
+            </dd>
+
+        </dl>
+    </div>
+</div>
+<br />
+<div class="col-md-offset-2 col-md-10" id="voltar" color="#fff">
+    @Html.ActionLink("Voltar", "Index")
+</div>
+<div class="image1">
+    <img src="~/Imagem/123456.png" />
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="linha">
+    <hr size="2px" width="1500px" />
+</div>

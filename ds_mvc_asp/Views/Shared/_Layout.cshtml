@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
+    <style>
+        a#nomepag {
+            color: #fff;
+            margin-top: 10px;
+            font-family: 'Harry P';
+            font-size: 25px;
+        }
+        a#nomepag:hover {
+           color: #fff;
+           font-family: 'Harry P';
+        }
+        a#home, a#cadastro, a#result {
+            color: #E8BF55;
+            font-family: 'Edo SZ';
+            margin-top: 10px;
+        }
+
+        a#home:hover, a#cadastro:hover, a#result:hover {
+            color: #fff;
+            font-family: 'Edo SZ';
+        }
+
+        .footer{
+            color: #fff;
+        }
+
+    </style>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="mais opções">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("HARRY POTTER", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", id = "nomepag" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "navbar-brand", @id = "home" })</li>
+                    <li>@Html.ActionLink("Cadastro", "Usuario", "Home", new { @class = "navbar-brand", @id = "cadastro" })</li>
+                    <li>@Html.ActionLink("Restultado", "Resultado", "Home", new { @class = "navbar-brand", @id = "result" })</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr color="#E8BF55" />
+
+    <div class="container body-content">
+        @RenderBody()
+        <br />
+        
+        <footer>
+            <center><p><font color="#fff">&copy; @DateTime.Now.Year - HARRY POTTER</font></p></center>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

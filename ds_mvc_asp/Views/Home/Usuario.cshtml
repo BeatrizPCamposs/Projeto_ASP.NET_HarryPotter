@@ -1,0 +1,158 @@
+﻿@model ds_mvc_asp.Models.Usuario
+
+@{
+    ViewBag.Title = "Usuario";
+}
+
+<style>
+    .centro {
+        background-color: #0000;
+        width: 1050px;
+        margin-left: -27px
+    }
+
+    label {
+        color: #fff;
+    }
+
+    .linha {
+        margin-left: -180px;
+    }
+
+    h2 {
+        font-family: 'Edo SZ';
+        color: #fff;
+    }
+
+    #cadastrar {
+        background: #E8BF55;
+        color: #fff;
+        font-family: 'Edo SZ';
+        border-radius: 10px;
+    }
+
+    #voltar {
+        margin: 0 auto;
+        width: 90px;
+        height: 25px;
+        color: #fff;
+        background: transparent #E8BF55;
+        border-color: #E8BF55;
+        border: 2px solid;
+        display: flex;
+        border-radius: 10px;
+        margin-left: 30px;
+    }
+
+    #voltar a {
+        color: #fff;
+        font-family: 'Edo SZ';
+        border-radius: 10px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        text-align: center;
+        vertical-align: middle;
+        margin-left: 8px;
+    }
+
+    .meio h2 {
+        text-shadow: 3px 3px #6B481D;
+        color: #E8BF55;
+        margin-left: 330px;
+    }
+
+    .image1 img {
+        height: 400px;
+        width: 400px;
+        top: 0px;
+        z-index: 3;
+        position: absolute;
+        margin-top: 110px;
+        margin-left: 640px;
+    }
+</style>
+
+<div class="meio"><h2>Cadastro do Usuário</h2></div>
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class="centro">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.NomeUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NomeUsuario, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NomeUsuario, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nasc, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nasc, new { htmlAttributes = new { @class = "form-control", type = "date", min = "1952-01-01", max = "2004-12-31", title="Somente maiores de 18 anos"} })
+                @Html.ValidationMessageFor(model => model.Nasc, "", new { @class = "text-danger", type = "date" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Confsenha, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Confsenha, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Confsenha, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Cadastrar" class="btn btn-default" id="cadastrar" />
+            </div>
+        </div>
+    </div>
+    }
+</div>
+
+<div class="col-md-offset-2 col-md-10" id="voltar" color="#fff">
+    @Html.ActionLink("Voltar", "Index")
+</div>
+
+<div class="image1">
+    <img src="~/Imagem/123456.png" />
+</div>
+<br />
+<br />
+<br />
+<br />
+<div class="linha">
+    <hr size="2px" width="1500px" />
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
